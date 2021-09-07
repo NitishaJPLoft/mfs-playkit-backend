@@ -1,0 +1,46 @@
+import express from 'express';
+import authRouter from './AuthRouter';
+import userRouter from './UserRouter';
+import schoolRouter from './SchoolRouter';
+import classRouter from './ClassRouter';
+import countryRouter from './CountryRouter';
+import studentRouter from './StudentRouter';
+import stateRouter from './StateRouter';
+import pageRouter from './PageRouter';
+import roleRouter from './RoleRouter';
+import movementRouter from './MovementRouter';
+import languageRouter from './LanguageRouter';
+import phaseRouter from './PhaseRouter';
+import taskNumberRouter from './TaskNumberRouter';
+import taskRouter from './TaskRouter';
+import trainingTaskRouter from './TrainingTaskRouter';
+import assessmentRouter from './AssessmentRouter';
+import tResultRouter from './TrainingResultRouter';
+import permissionRouter from './PermissionRouter';
+import analyseRouter from './AnalyseRouter';
+import dashboardRouter from './DashboardRouter';
+
+const router = express();
+
+router.use('/api/auth', authRouter);
+router.use('/api/users', userRouter);
+router.use('/api/schools', schoolRouter);
+router.use('/api/classes', classRouter);
+router.use('/api/countries', countryRouter);
+router.use('/api/students', studentRouter);
+router.use('/api/regions', stateRouter);
+router.use('/api/pages', pageRouter);
+router.use('/api/roles', roleRouter);
+router.use('/api/movements', movementRouter);
+router.use('/api/language', languageRouter);
+router.use('/api/phase', phaseRouter);
+router.use('/api/taskNumber', taskNumberRouter);
+router.use('/api/tasks', taskRouter);
+router.use('/api/training', trainingTaskRouter);
+router.use('/api/assessments', assessmentRouter);
+router.use('/api/results', tResultRouter);
+router.use('/api/permission', permissionRouter);
+router.use('/api/analyse', analyseRouter);
+router.use('/api/dashboard', dashboardRouter);
+
+export default router;

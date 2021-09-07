@@ -1,0 +1,52 @@
+{
+  "name": "blazepod_api",
+  "version": "1.0.0",
+  "description": "blazepod api for blazepod game phase2",
+  "main": "dist/index.js",
+  "author": "Nitisha Khandelwal <nitisha.kahndelwal@jploft.in>",
+  "license": "MIT",
+  "scripts": {
+    "copy": "yarn run cpy '.env.example' '.' --rename=.env --no-overwrite ",
+    "clean": "rimraf dist",
+    "pretty": "prettier ./dist/*.js ./src/*.js ./src/**/*.js ./src/**/**/*.js ./src/**/**/**/*.js ./src/**/**/**/**/*.js  --color --write",
+    "build:babel": "NODE_ENV=production babel src --out-dir dist --extensions .js --source-maps inline",
+    "build": "yarn run clean && yarn run build:babel",
+    "start": "yarn run build && node dist/index.js",
+    "dev:ubuntu": "yarn run copy && NODE_ENV=development nodemon --watch src -e ts --exec ts-node ./src/index.ts",
+    "dev": " nodemon --watch src -e js --exec babel-node ./src/index.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "cpy-cli": "^3.1.1",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bull": "^3.20.0",
+    "bullmq": "^1.12.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.9.2",
+    "generate-password": "^1.6.0",
+    "i18next": "^19.9.2",
+    "i18next-express-middleware": "^2.0.0",
+    "i18next-node-fs-backend": "^2.1.3",
+    "ip": "^1.1.5",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.1",
+    "mongoose": "^5.11.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "winston": "^3.3.3"
+  }
+}
